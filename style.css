@@ -1,0 +1,8 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.day {
+  border: 1px solid black;
+  padding: 4px;
+}
