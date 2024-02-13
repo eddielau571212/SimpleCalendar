@@ -1,6 +1,5 @@
-//render table
-//insert data
 const monthEl = document.getElementById("month");
+
 const tableEl = document.getElementById("table");
 const months = [
   "January",
