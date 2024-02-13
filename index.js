@@ -1,5 +1,6 @@
 //render table
 //insert data
+const monthEl = document.getElementById("month");
 const tableEl = document.getElementById("table");
 const months = [
   "January",
@@ -18,6 +19,7 @@ const months = [
 const d = new Date();
 const month = months[d.getMonth()];
 const today = d.getDate();
+monthEl.innerHTML = month;
 console.log(month);
 console.log(today);
 //loop through the days of the week
