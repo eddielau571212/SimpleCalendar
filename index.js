@@ -24,7 +24,9 @@ console.log(today);
 //loop through the days of the week
 const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let day = d.getDay();
+//get the first day of the week
 console.log(week[day]);
+
 //get the first day of the month
 const firstDay = new Date(d.getFullYear(), d.getMonth(), 1);
 
@@ -35,12 +37,12 @@ const lastDay = new Date(d.getFullYear(), d.getMonth() + 1, 0);
 // console.log(lastDay);
 
 //get the number of days in the month
-const daysInMonth = lastDay.getDate();
-console.log(daysInMonth);
-let daysInMonthArr = [];
+const numsInMonth = lastDay.getDate();
+console.log(numsInMonth);
+let numsInMonthArr = [];
 
-for (let i = 1; i < daysInMonth + 1; i++) {
-  daysInMonthArr.push(i);
+for (let i = 1; i < numsInMonth + 1; i++) {
+  numsInMonthArr.push(i);
   //   console.log(i);
 }
 week.forEach((Weekday) => {
@@ -49,18 +51,21 @@ week.forEach((Weekday) => {
 //add the first day to the month
 //assign the first day of the month to the correct weekday
 
-let currentDay = firstDay.getDay();
+let firstWeekFirstDay = firstDay.getDay();
 let dayCounter = 1;
 
 for (let i = 0; i < 6; i++) {
   let row = document.createElement("tr");
   for (let j = 0; j < 7; j++) {
-    if (i === 0 && j < currentDay) {
+    if (i === 0 && j < firstWeekFirstDay) {
+      console.log(j);
+      //Empty cell
+      //Feb 2024 ,output 0,1,2,3
       let cell = document.createElement("td");
       cell.classList.add("empty");
       row.appendChild(cell);
       row.classList.add("firstRow");
-    } else if (dayCounter > daysInMonth) {
+    } else if (dayCounter > numsInMonth) {
       break;
       //Not exist day in month
     } else {
